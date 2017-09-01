@@ -13,32 +13,23 @@ class App extends Component {
   componentDidMount(){
     let url = "https://swapi.co/api/people/1";
     fetch(url)
-      // .then((response) => {
-      //   response.json()
-      //   .then((data) => {
-      //     this.setState(
-      //       {starWarsName: data.name}
-      //     );
-      //   });
         .then((response) => {
           return response.json()
         })
         .then(data => {
           console.log("this is: ", this);
-          // console.log("Star Wars Character: ", data.name);
           this.setState({
             starWarsName: data.name
           });
         });
-    // });
   }
   render() {
     return (
       <div className="App">
-        <body className="App-header">
+        <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
-        </body>
+        </div>
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
